@@ -1,0 +1,82 @@
+#
+# wm independent hotkeys
+#
+
+# program launcher (ROFI)
+super + d
+      rofi -show run
+
+# terminal emulator
+super + Return
+	/opt/kitty/bin/kitty
+
+#cerrar la ventana
+super + BackSpace
+	bspc node -{c,k}
+#reiniciar la polybar
+super + p
+  /home/martin/.config/polybar/launch.sh
+
+# make sxhkd reload its configuration files:
+super + r
+	pkill -USR1 -x sxhkd
+
+#
+# bspwm hotkeys
+#
+
+#
+# state/flags
+#
+
+#
+# focus/swap
+#
+
+
+# focus the node in the given direction y lo de llevarlo aparentemente
+super + {_,shift + } + {h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+#
+# preselect
+#
+
+# preselect the direction
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+
+#
+# move/resize
+#
+
+#Custom resize
+alt + super + {h,j,k,l}
+    /home/martin/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
+
+
+# program launcher (ROFI)
+super + d
+rofi -show run
+
+#pantalla completa
+super + f
+    bspc node -t fullscreen
+
+#Salir pantalla completa
+super + Escape
+    bspc node -t tiled
+

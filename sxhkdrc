@@ -80,3 +80,7 @@ super + f
 super + Escape
     bspc node -t tiled
 
+# pa sacar capturas
+
+F7
+  flameshot gui

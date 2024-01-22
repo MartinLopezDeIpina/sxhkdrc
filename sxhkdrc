@@ -84,3 +84,7 @@ super + Escape
 
 F7
   flameshot gui
+
+alt + dead_acute
+    xdotool key --clearmodifiers "ISO_Level3_Shift+dead_acute"
+

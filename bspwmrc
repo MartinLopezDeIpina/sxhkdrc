@@ -20,5 +20,6 @@ bspc rule -a Screenkey manage=off
 picom &
 bspc config border_width 0
 #eval $(pkill sxhkd && pulseaudio --start)
+vmware-user-suid-wrapp
 
 feh --bg-center /home/martin/bmw.jpg
